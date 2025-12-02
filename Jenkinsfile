@@ -22,7 +22,7 @@ pipeline {
     stage('Checkout') {
       steps {
         echo "Checking out branch ${params.BRANCH}"
-        checkout([$class: 'GitSCM', branches: [[name: "*/${params.BRANCH}"]], userRemoteConfigs: [[url: 'https://github.com/Herit1974/jenkin-pipeline-1.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: "*/${params.BRANCH}"]], userRemoteConfigs: [[url: 'https://github.com/Herit1974/jenkin-pipeline-2.git']]])
       }
     }
 
