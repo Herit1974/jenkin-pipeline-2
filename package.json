@@ -1,0 +1,19 @@
+{
+  "name": "simple-node-ci",
+  "version": "1.0.0",
+  "description": "Tiny Node app to demo Jenkins CI/CD pipeline",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "lint": "node -e \"console.log('lint: (fake) no errors')\"",
+    "test": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./test-results/results.xml",
+    "build": "mkdir -p dist && cp app.js dist/app.js || (if exist dist (copy app.js dist\\app.js))",
+    "ci-ready": "npm run lint && npm run test && npm run build"
+  },
+  "author": "Herit",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.0.0"
+  }
+}
